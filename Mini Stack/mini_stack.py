@@ -13,3 +13,8 @@ class Users:
 		"""this returns the user name and the time they logged in"""
 		login_details = ("{} logged in at {}".format(self.name, self.lastLoggedInAt))
 		return login_details 
+
+	def logout(self):
+		"""this returns the user name and the time they logged out"""
+		logout_details = ("{} logged out at {}".format(self.name, self.lastLoggedInAt))
+		return login_details		
