@@ -1,6 +1,26 @@
+"""
+Main file containing thhe application logic
+"""
 from datetime import datetime
 
 comments = []
+class Users:
+	def __init__(self, name, role):
+		"""Initializes the Users class"""
+		self.name  = name
+		self.role = role
+		self.lastLoggedInAt = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
+
+	def login(self):
+		"""this returns the user name and the time they logged in"""
+		login_details = ("{} logged in at {}".format(self.name, self.lastLoggedInAt))
+		return login_details 
+
+	def logout(self):
+		"""this returns the user name and the time they logged out"""
+		logout_details = ("{} logged out at {}".format(self.name, self.lastLoggedInAt))
+		return login_details		
+
 class Comment(object):
     """This class holds methods for adding, 
     modifying, deleting and replying to a comment
@@ -33,8 +53,3 @@ class Comment(object):
             if id in id['id']:
                 del(self.comment['comment'])
                 return self.comment
-
-if __name__ == '__main__':
-    a = Comment("Clint","My namenkpho").add()
-    b = Comment("ken","My lkasdblkjb").add()
-    print (b)
